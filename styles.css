@@ -3,101 +3,103 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f7fb;
-  color: #333;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  color: #2c2c2c;
   line-height: 1.6;
 }
 
 /* Navbar */
 .navbar {
-  background: #1a1d23;
+  background: rgba(26, 29, 35, 0.95);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar .logo {
-  font-weight: bold;
-  font-size: 1.6rem;
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #1a73e8;
+  color: #00b7ff;
+  transform: scale(1.05);
 }
 
 /* Main Container */
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
 }
 
 /* Section Intro */
 .intro {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .intro h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 800;
   color: #1a1d23;
   margin-bottom: 1rem;
+  animation: fadeInDown 1s ease;
 }
 
 .intro p {
-  font-size: 1.1rem;
-  color: #666;
+  font-size: 1.2rem;
+  color: #4a4a4a;
   max-width: 800px;
   margin: 0 auto 2rem;
 }
 
 .intro .highlight {
-  color: #1a73e8;
+  color: #00b7ff;
   font-weight: 700;
 }
 
 /* Project Highlights Section */
 .highlights h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-
-.highlights ul {
-  list-style: none;
-  padding: 0;
+  font-size: 2.2rem;
+  color: #1a1d23;
+  margin-bottom: 2rem;
 }
 
 .highlights ul li {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
 }
 
 .highlights a {
-  text-decoration: none;
-  color: #1a73e8;
-  font-weight: 500;
+  color: #00b7ff;
+  font-weight: 600;
 }
 
 .highlights a:hover {
@@ -107,42 +109,99 @@ body {
 /* Project Cards */
 .project-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 .project-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.02);
 }
 
 .project-card h2 {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: #1a1d23;
 }
 
 .project-card p {
-  color: #666;
-  margin-bottom: 1.5rem;
+  color: #555;
+  margin: 1rem 0;
 }
 
 .project-card a {
-  color: #1a73e8;
-  text-decoration: none;
+  color: #00b7ff;
   font-weight: 600;
 }
 
-.project-card a:hover {
-  text-decoration: underline;
+/* Contact Form */
+.contact-form form {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 3rem auto;
+}
+
+.contact-form label {
+  font-size: 1.1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #f2f2f2;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background: #00b7ff;
+  color: white;
+  padding: 0.8rem 2.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #0099dd;
+}
+
+/* Resume Section */
+.resume-section {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.resume-section a {
+  background: linear-gradient(to right, #00b7ff, #00e0ff);
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 183, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.resume-section a:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #00aaff, #00d2ff);
 }
 
 /* Footer */
@@ -150,75 +209,19 @@ footer {
   background: #1a1d23;
   color: white;
   text-align: center;
-  padding: 1.2rem;
+  padding: 2rem 1rem;
   font-size: 1rem;
-  position: relative;
+  margin-top: 4rem;
 }
 
-footer p {
-  margin: 0;
-}
-
-/* Contact Form */
-.contact-form form {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 2rem auto;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.contact-form textarea {
-  height: 150px;
-}
-
-.contact-form button {
-  background: #1a73e8;
-  color: white;
-  border: none;
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contact-form button:hover {
-  background: #166bb7;
-}
-
-/* Resume */
-.resume-section {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.resume-section a {
-  background-color: #1a73e8;
-  color: white;
-  padding: 1rem 3rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-
-.resume-section a:hover {
-  background-color: #166bb7;
+/* Animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
